@@ -112,15 +112,15 @@ export default function Sidebar({
         </div>
 
         {/* Role Badge */}
-        <div className="mx-3 mt-2 px-2.5 py-1 rounded-lg bg-slate-100 border border-slate-200 flex items-center justify-between text-[10px]">
-          <span className="text-slate-500 font-medium">Akses Role:</span>
-          <span className="font-extrabold text-sky-700 font-mono">
+        <div className="mx-3 mt-2 px-2.5 py-1 rounded-lg bg-slate-200/80 border border-slate-300 flex items-center justify-between text-[10px]">
+          <span className="text-slate-800 font-extrabold">Akses Role:</span>
+          <span className="font-black text-sky-800 font-mono">
             {currentRole}
           </span>
         </div>
 
         {/* Categorized Navigation */}
-        <nav className="flex-1 px-2 py-2 space-y-3 overflow-y-auto">
+        <nav className="flex-1 px-2 py-2 space-y-3.5 overflow-y-auto">
           {menuCategories.map((category, catIdx) => {
             const visibleItems = category.items.filter(item => item.roles.includes(currentRole));
             if (visibleItems.length === 0) return null;
@@ -128,12 +128,12 @@ export default function Sidebar({
             return (
               <div key={catIdx} className="space-y-1">
                 {/* Category Header */}
-                <h3 className="px-2.5 text-[9px] font-black text-slate-400 uppercase tracking-wider">
+                <h3 className="px-2.5 py-0.5 text-[9px] font-black text-slate-800 uppercase tracking-wider bg-slate-100/90 rounded border-l-2 border-sky-600">
                   {category.title}
                 </h3>
 
                 {/* Category Menu Items */}
-                <div className="space-y-0.5">
+                <div className="space-y-0.5 pt-0.5">
                   {visibleItems.map((item) => {
                     const Icon = item.icon;
                     const isActive = activeTab === item.id;
@@ -144,20 +144,20 @@ export default function Sidebar({
                           setActiveTab(item.id);
                           if (onCloseMobile) onCloseMobile();
                         }}
-                        className={`w-full flex items-center justify-between px-2.5 py-1.5 rounded-lg text-[11px] font-semibold transition group ${
+                        className={`w-full flex items-center justify-between px-2.5 py-1.5 rounded-lg text-[11px] font-bold transition group ${
                           isActive
-                            ? 'bg-sky-600 text-white shadow-sm shadow-sky-600/30'
-                            : 'text-slate-600 hover:text-slate-900 hover:bg-slate-100'
+                            ? 'bg-sky-700 text-white shadow-md shadow-sky-700/30'
+                            : 'text-slate-800 hover:text-slate-950 hover:bg-slate-100'
                         }`}
                       >
                         <div className="flex items-center gap-2.5 truncate">
-                          <Icon className={`w-3.5 h-3.5 flex-shrink-0 transition ${isActive ? 'text-white' : 'text-slate-400 group-hover:text-sky-600'}`} />
+                          <Icon className={`w-3.5 h-3.5 flex-shrink-0 transition ${isActive ? 'text-white' : 'text-slate-600 group-hover:text-sky-700'}`} />
                           <span className="truncate">{item.label}</span>
                         </div>
                         {item.badge && (
                           <span
-                            className={`text-[9px] font-extrabold px-1.5 py-0.2 rounded-full ${
-                              item.badgeColor ? `${item.badgeColor} text-white` : isActive ? 'bg-sky-700 text-white' : 'bg-slate-100 text-sky-700 border border-slate-200'
+                            className={`text-[9px] font-black px-1.5 py-0.2 rounded-full ${
+                              item.badgeColor ? `${item.badgeColor} text-white shadow-xs` : isActive ? 'bg-sky-900 text-white' : 'bg-slate-200 text-sky-900 border border-slate-300'
                             }`}
                           >
                             {item.badge}

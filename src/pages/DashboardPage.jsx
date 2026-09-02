@@ -87,27 +87,27 @@ export default function DashboardPage({
     <div className="space-y-3.5 text-[11px] pb-6 text-slate-800">
       
       {/* White Clean Header Banner */}
-      <div className="bg-white border border-slate-200/90 rounded-xl p-3 shadow-xs flex items-center justify-between gap-3">
+      <div className="bg-white border border-slate-300 rounded-xl p-3 shadow-xs flex items-center justify-between gap-3">
         <div className="flex items-center gap-3">
-          <div className="w-8 h-8 rounded-lg bg-sky-50 border border-sky-200 flex items-center justify-center text-sky-700 font-extrabold text-sm">
+          <div className="w-8 h-8 rounded-lg bg-sky-100 border border-sky-300 flex items-center justify-center text-sky-900 font-black text-sm shadow-xs">
             HQ
           </div>
           <div>
             <div className="flex items-center gap-2">
-              <h1 className="text-sm font-black text-slate-900 leading-tight">HMC GROUP</h1>
-              <span className="px-2 py-0.2 rounded bg-sky-50 text-sky-700 border border-sky-200 text-[9px] font-extrabold uppercase">
+              <h1 className="text-sm font-black text-slate-950 leading-tight">HMC GROUP</h1>
+              <span className="px-2 py-0.2 rounded bg-sky-100 text-sky-900 border border-sky-300 text-[9px] font-black uppercase tracking-wider">
                 Command Center
               </span>
             </div>
-            <p className="text-[10px] text-slate-500">Monitoring 13 Unit Cabang HMC • Cirebon, Kuningan, Indramayu, Kedawung, Majalengka, Malang, Subang, Cianjur, Bandung, Garut, Pakisaji, Karangasem, Serang</p>
+            <p className="text-[10px] text-slate-700 font-semibold mt-0.5">Monitoring 13 Unit Cabang HMC • Cirebon, Kuningan, Indramayu, Kedawung, Majalengka, Malang, Subang, Cianjur, Bandung, Garut, Pakisaji, Karangasem, Serang</p>
           </div>
         </div>
 
         <button
           onClick={onResetFilters}
-          className="px-2.5 py-1.5 bg-slate-50 hover:bg-slate-100 text-slate-700 border border-slate-200 rounded-lg text-[10px] font-bold flex items-center gap-1.5 transition shadow-xs"
+          className="px-2.5 py-1.5 bg-slate-100 hover:bg-slate-200 text-slate-900 border border-slate-300 rounded-lg text-[10px] font-black flex items-center gap-1.5 transition shadow-xs"
         >
-          <RefreshCw className="w-3 h-3 text-sky-600" /> Reset Filter
+          <RefreshCw className="w-3 h-3 text-sky-700" /> Reset Filter
         </button>
       </div>
 

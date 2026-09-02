@@ -227,23 +227,23 @@ export default function PerintahPekerjaanPage({
                 <th className="py-2.5 px-3 text-center">Aksi</th>
               </tr>
             </thead>
-            <tbody className="divide-y divide-slate-800 text-slate-300">
+            <tbody className="divide-y divide-slate-200 text-slate-900">
               {filteredTasks.map((t) => {
                 const badge = getStatusBadgeColor(t.status);
                 const countdown = calculateTaskCountdown(t.deadline, t.status);
                 return (
                   <tr key={t.id} className="hover:bg-slate-50 transition">
-                    <td className="py-2 px-3 font-mono font-bold text-sky-700">{t.id}</td>
+                    <td className="py-2 px-3 font-mono font-black text-sky-800">{t.id}</td>
                     <td className="py-2 px-3">
-                      <span className="font-bold text-slate-900 block">{t.title}</span>
-                      <span className="text-[9px] text-slate-500">Periode: {t.period} • {t.category}</span>
+                      <span className="font-extrabold text-slate-950 block">{t.title}</span>
+                      <span className="text-[9px] text-slate-700 font-semibold">Periode: {t.period} • {t.category}</span>
                     </td>
                     <td className="py-2 px-3">
-                      <span className={`px-2 py-0.5 rounded text-[9px] font-extrabold border ${
-                        t.assignmentType === 'Pribadi' ? 'bg-purple-50 text-purple-700 border-purple-200' :
-                        t.assignmentType === 'Tim' ? 'bg-indigo-50 text-indigo-700 border-indigo-200' :
-                        t.assignmentType === 'Divisi' ? 'bg-sky-50 text-sky-700 border-sky-200' :
-                        'bg-emerald-50 text-emerald-700 border-emerald-200'
+                      <span className={`px-2 py-0.5 rounded text-[9px] font-black border ${
+                        t.assignmentType === 'Pribadi' ? 'bg-purple-100 text-purple-950 border-purple-300' :
+                        t.assignmentType === 'Tim' ? 'bg-indigo-100 text-indigo-950 border-indigo-300' :
+                        t.assignmentType === 'Divisi' ? 'bg-sky-100 text-sky-950 border-sky-300' :
+                        'bg-emerald-100 text-emerald-950 border-emerald-300'
                       }`}>
                         {t.assignmentType === 'Pribadi' ? '👤 Pribadi' :
                          t.assignmentType === 'Tim' ? '👥 Tim' :
@@ -251,23 +251,23 @@ export default function PerintahPekerjaanPage({
                          '🏥 Unit'}
                       </span>
                     </td>
-                    <td className="py-2 px-3 font-semibold text-slate-200">{t.branchName}</td>
-                    <td className="py-2 px-3 font-semibold text-slate-300">{t.picName}</td>
+                    <td className="py-2 px-3 font-bold text-slate-900">{t.branchName}</td>
+                    <td className="py-2 px-3 font-bold text-slate-800">{t.picName}</td>
                     <td className="py-2 px-3 font-mono">
-                      <span className="text-slate-300 block">{new Date(t.deadline).toLocaleString('id-ID')}</span>
-                      <span className={`text-[9px] font-bold ${countdown.isOverdue ? 'text-rose-400' : 'text-emerald-400'}`}>
+                      <span className="text-slate-900 font-semibold block">{new Date(t.deadline).toLocaleString('id-ID')}</span>
+                      <span className={`text-[9px] font-black ${countdown.isOverdue ? 'text-rose-700' : 'text-emerald-700'}`}>
                         {countdown.text}
                       </span>
                     </td>
                     <td className="py-2 px-3">
-                      <span className={`px-1.5 py-0.2 rounded text-[9px] font-bold ${
-                        t.priority === 'HIGH' ? 'bg-rose-950 text-rose-300 border border-rose-800' : 'bg-amber-950 text-amber-300 border border-amber-800'
+                      <span className={`px-1.5 py-0.2 rounded text-[9px] font-black ${
+                        t.priority === 'HIGH' ? 'bg-rose-100 text-rose-950 border border-rose-400' : 'bg-amber-100 text-amber-950 border border-amber-400'
                       }`}>
                         {t.priority}
                       </span>
                     </td>
                     <td className="py-2 px-3">
-                      <span className={`px-2 py-0.5 rounded text-[9px] font-bold border inline-flex items-center gap-1 ${badge.bg} ${badge.text} ${badge.border}`}>
+                      <span className={`px-2 py-0.5 rounded text-[9px] font-black border inline-flex items-center gap-1 ${badge.bg} ${badge.text} ${badge.border}`}>
                         <span className={`w-1.5 h-1.5 rounded-full ${badge.dot}`}></span>
                         {t.status}
                       </span>
@@ -275,7 +275,7 @@ export default function PerintahPekerjaanPage({
                     <td className="py-2 px-3 text-center">
                       <button
                         onClick={() => onSelectTask(t)}
-                        className="px-2.5 py-1 bg-slate-800 hover:bg-slate-700 text-sky-400 border border-slate-700 rounded text-[10px] font-semibold"
+                        className="px-2.5 py-1 bg-slate-100 hover:bg-slate-200 text-sky-800 border border-slate-300 rounded text-[10px] font-extrabold shadow-xs"
                       >
                         Detail
                       </button>
@@ -290,32 +290,32 @@ export default function PerintahPekerjaanPage({
 
       {/* CREATE TASK MODAL */}
       {showCreateModal && (
-        <div className="fixed inset-0 z-50 bg-slate-900/80 backdrop-blur-sm flex items-center justify-center p-4">
-          <div className="bg-slate-900 border border-slate-700 rounded-2xl w-full max-w-2xl shadow-2xl overflow-hidden text-[11px]">
-            <div className="px-5 py-3 bg-slate-800/80 border-b border-slate-700 flex items-center justify-between">
-              <h2 className="text-xs font-bold text-white flex items-center gap-2">
-                <Plus className="w-4 h-4 text-sky-400" /> + Buat Perintah Pekerjaan HMC Baru
+        <div className="fixed inset-0 z-50 bg-slate-900/60 backdrop-blur-xs flex items-center justify-center p-4">
+          <div className="bg-white border border-slate-300 rounded-2xl w-full max-w-2xl shadow-2xl overflow-hidden text-[11px] text-slate-900">
+            <div className="px-5 py-3 bg-slate-100 border-b border-slate-300 flex items-center justify-between">
+              <h2 className="text-xs font-black text-slate-950 flex items-center gap-2">
+                <Plus className="w-4 h-4 text-sky-700" /> + Buat Perintah Pekerjaan HMC Baru
               </h2>
-              <button onClick={() => setShowCreateModal(false)} className="text-slate-400 hover:text-white">
+              <button onClick={() => setShowCreateModal(false)} className="text-slate-500 hover:text-slate-900">
                 <X className="w-4 h-4" />
               </button>
             </div>
 
             <form onSubmit={handleFormSubmit} className="p-5 space-y-3 max-h-[75vh] overflow-y-auto">
               <div>
-                <label className="text-slate-400 font-bold block mb-1">Judul Pekerjaan *</label>
+                <label className="text-slate-900 font-extrabold block mb-1">Judul Pekerjaan *</label>
                 <input
                   type="text"
                   required
                   placeholder="Contoh: Laporan Presensi Nakes Harian"
                   value={formData.title}
                   onChange={(e) => setFormData({ ...formData, title: e.target.value })}
-                  className="w-full bg-slate-800 border border-slate-700 text-white rounded-lg px-3 py-1.5"
+                  className="w-full bg-slate-50 border border-slate-300 text-slate-950 font-semibold rounded-lg px-3 py-1.5 focus:bg-white focus:ring-1 focus:ring-sky-600"
                 />
               </div>
 
               <div>
-                <label className="text-slate-400 font-bold block mb-1">Deskripsi Detail</label>
+                <label className="text-slate-900 font-extrabold block mb-1">Deskripsi Detail</label>
                 <textarea
                   rows={2}
                   placeholder="Instruksi pengerjaan..."

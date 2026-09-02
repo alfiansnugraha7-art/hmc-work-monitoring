@@ -1,23 +1,59 @@
 // Deadline & Escalation Engine for HOLDING WORK MONITORING
 
-export const getStatusBadgeColor = (status) => {
+export function getStatusBadgeColor(status) {
   switch (status) {
     case 'SELESAI':
-      return { bg: 'bg-emerald-50', text: 'text-emerald-700', border: 'border-emerald-200', dot: 'bg-emerald-600', label: '🟢 Selesai' };
+      return {
+        bg: 'bg-emerald-100',
+        text: 'text-emerald-950',
+        border: 'border-emerald-400 font-extrabold',
+        dot: 'bg-emerald-600',
+        label: '🟢 Selesai'
+      };
     case 'SEDANG DIKERJAKAN':
-      return { bg: 'bg-sky-50', text: 'text-sky-700', border: 'border-sky-200', dot: 'bg-sky-600', label: '🔵 In Progress' };
+      return {
+        bg: 'bg-sky-100',
+        text: 'text-sky-950',
+        border: 'border-sky-400 font-extrabold',
+        dot: 'bg-sky-600',
+        label: '🔵 In Progress'
+      };
     case 'MENUNGGU VERIFIKASI':
-      return { bg: 'bg-amber-50', text: 'text-amber-700', border: 'border-amber-200', dot: 'bg-amber-600', label: '🟡 Menunggu Verifikasi' };
+      return {
+        bg: 'bg-amber-100',
+        text: 'text-amber-950',
+        border: 'border-amber-400 font-extrabold',
+        dot: 'bg-amber-600',
+        label: '🟡 Menunggu Verifikasi'
+      };
     case 'BELUM DIKERJAKAN':
       return { bg: 'bg-orange-50', text: 'text-orange-700', border: 'border-orange-200', dot: 'bg-orange-600', label: '🟠 Belum Dikerjakan' };
     case 'TERLAMBAT':
-      return { bg: 'bg-rose-50', text: 'text-rose-700', border: 'border-rose-200', dot: 'bg-rose-600', label: '🔴 Terlambat' };
+      return {
+        bg: 'bg-rose-100',
+        text: 'text-rose-950',
+        border: 'border-rose-400 font-extrabold',
+        dot: 'bg-rose-600',
+        label: '🔴 Terlambat'
+      };
     case 'REVISI':
-      return { bg: 'bg-purple-50', text: 'text-purple-700', border: 'border-purple-200', dot: 'bg-purple-600', label: '🟣 Perlu Revisi' };
+      return {
+        bg: 'bg-purple-100',
+        text: 'text-purple-950',
+        border: 'border-purple-400 font-extrabold',
+        dot: 'bg-purple-600',
+        label: '🟣 Perlu Revisi'
+      };
     default:
-      return { bg: 'bg-slate-100', text: 'text-slate-700', border: 'border-slate-300', dot: 'bg-slate-500', label: '⚫ Unknown' };
+      return {
+        bg: 'bg-slate-200',
+        text: 'text-slate-900',
+        border: 'border-slate-400 font-extrabold',
+        dot: 'bg-slate-600',
+        label: '⚫ Unknown'
+      };
   }
-};
+}
 
 export const calculateTaskCountdown = (deadlineStr, status) => {
   if (status === 'SELESAI') return { text: 'Sudah Selesai', isOverdue: false, days: 0 };
