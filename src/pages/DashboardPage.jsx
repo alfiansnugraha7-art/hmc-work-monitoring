@@ -111,6 +111,53 @@ export default function DashboardPage({
         </button>
       </div>
 
+      {/* 🔄 OPERATIONAL WORKFLOW GUIDE DIAGRAM */}
+      <div className="bg-white border border-slate-300 rounded-xl p-3 shadow-xs space-y-2">
+        <div className="flex items-center justify-between border-b border-slate-200 pb-2">
+          <div className="flex items-center gap-2">
+            <span className="px-2 py-0.5 rounded bg-sky-100 text-sky-950 font-black text-[9px] uppercase border border-sky-300">
+              STANDAR DIAGRAM ALUR KERJA (FLOW)
+            </span>
+            <h2 className="text-xs font-black text-slate-950">Alur Operasional Pengawasan & Penugasan HMC GROUP</h2>
+          </div>
+          <span className="text-[9px] text-slate-600 font-bold">5 Fase Terstruktur</span>
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-4 gap-2 text-[10px]">
+          <div className="p-2.5 bg-slate-50 border border-slate-200 rounded-lg space-y-1">
+            <div className="flex items-center justify-between text-sky-800 font-black">
+              <span>1. Penerbitan Perintah</span>
+              <span className="w-4 h-4 rounded-full bg-sky-200 text-sky-950 flex items-center justify-center text-[9px]">1</span>
+            </div>
+            <p className="text-slate-700 text-[9.5px] font-semibold">Direksi Holding/Manager menerbitkan tugas ke <strong>Pribadi, Tim, Divisi, atau Unit Cabang</strong>.</p>
+          </div>
+
+          <div className="p-2.5 bg-slate-50 border border-slate-200 rounded-lg space-y-1">
+            <div className="flex items-center justify-between text-indigo-800 font-black">
+              <span>2. Submission & Upload Bukti</span>
+              <span className="w-4 h-4 rounded-full bg-indigo-200 text-indigo-950 flex items-center justify-center text-[9px]">2</span>
+            </div>
+            <p className="text-slate-700 text-[9.5px] font-semibold">PIC Lapangan mengerjakan tugas, mengisikan angka laporan & <strong>wajib upload dokumen</strong>.</p>
+          </div>
+
+          <div className="p-2.5 bg-slate-50 border border-slate-200 rounded-lg space-y-1">
+            <div className="flex items-center justify-between text-amber-800 font-black">
+              <span>3. Verifikasi & Matrix 9-Box</span>
+              <span className="w-4 h-4 rounded-full bg-amber-200 text-amber-950 flex items-center justify-center text-[9px]">3</span>
+            </div>
+            <p className="text-slate-700 text-[9.5px] font-semibold">Kepala Cabang memverifikasi bukti. Sistem memetakan SDM ke dalam <strong>Matrix 9-Box Kinerja</strong>.</p>
+          </div>
+
+          <div className="p-2.5 bg-slate-50 border border-slate-200 rounded-lg space-y-1">
+            <div className="flex items-center justify-between text-emerald-800 font-black">
+              <span>4. Pelaporan & Leaderboard</span>
+              <span className="w-4 h-4 rounded-full bg-emerald-200 text-emerald-950 flex items-center justify-center text-[9px]">4</span>
+            </div>
+            <p className="text-slate-700 text-[9.5px] font-semibold">Analitik otomatis terkompilasi ke <strong>Leaderboard Cabang & Ekspor Laporan Bulanan</strong>.</p>
+          </div>
+        </div>
+      </div>
+
       {/* 🔴 LIVE REPORT FEED STREAM: TUGAS BARU SELESAI / SUBMITTED */}
       <div className="bg-gradient-to-r from-emerald-500/10 via-sky-500/5 to-white border border-emerald-300/80 rounded-xl p-2.5 shadow-xs space-y-2">
         <div className="flex items-center justify-between">
